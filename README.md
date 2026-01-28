@@ -10,6 +10,7 @@ Python + Streamlit でサクッと作りました。
 - 軽量・シンプル設計（依存関係も最小限）
 
 ## デモ（予定）
+https://qr-generator-jin.streamlit.app/
 
 ## ローカルでの実行方法
 
@@ -17,9 +18,9 @@ Python + Streamlit でサクッと作りました。
    git clone https://github.com/RuuL333/qr-code-generator-streamlit.git
    cd qr-code-generator-streamlit
 
-仮想環境を作成（推奨）Bashpython -m venv venv
+仮想環境を作成（推奨）python -m venv venv
 source venv/bin/activate    # Windowsの場合は venv\Scripts\activate
-依存関係をインストールBashpip install -r requirements.txt
+依存関係をインストールpip install -r requirements.txt
 アプリを起動
 streamlit run app.py
 ブラウザが自動で開くので、URLを入力して「QRコード作成」を押してください！
