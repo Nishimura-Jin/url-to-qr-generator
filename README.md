@@ -17,11 +17,13 @@ https://qr-generator-jin.streamlit.app/
 1. リポジトリをクローン
    git clone https://github.com/RuuL333/qr-code-generator-streamlit.git
    cd qr-code-generator-streamlit
+   https://github.com/Nishimura-Jin/url-to-qr-generator
 
-仮想環境を作成（推奨）python -m venv venv
+2. 仮想環境を作成（推奨）python -m venv venv
 source venv/bin/activate    # Windowsの場合は venv\Scripts\activate
-依存関係をインストールpip install -r requirements.txt
-アプリを起動
-streamlit run app.py
-ブラウザが自動で開くので、URLを入力して「QRコード作成」を押してください！
-ターミナルでCtrl + Cを押して終了
+3. 依存関係をインストール
+   pip install -r requirements.txt
+4. アプリを起動
+  streamlit run app.py
+5. ブラウザが自動で開くので、URLを入力して「QRコード作成」を押してください！
+6. ターミナルでCtrl + Cを押して終了
