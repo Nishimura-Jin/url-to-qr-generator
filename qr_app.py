@@ -1,15 +1,36 @@
 import qrcode
 import streamlit as st
-import numpy as np
+from io import BytesIO
 from PIL import Image
 
-st.title("QRコード自動生成アプリ")
+st.title("QRコード生成ツール")
+st.write("URLを入力するだけで、QRコードを作成・ダウンロードできます。")
 
-url = st.text_input("QRコードを作成したいURLを入力してください")
+# 入力フォーム
+url = st.text_input("QRコード化したいURLを入力してください", placeholder="https://example.com")
 
-if st.button("QRコード作成"):
-    _img = qrcode.make(url)
-    _img.save("qrcode.png")
-    img = Image.open("qrcode.png")
-    st.image((img))
-
+if st.button("QRコードを生成"):
+    if url:
+        # QRコード生成
+        qr = qrcode.QRCode(box_size=10, border=4)
+        qr.add_data(url)
+        qr.make(fit=True)
+        img = qr.make_image(fill_color="black", back_color="white")
+        
+        # Streamlitで表示するためにPILに変換
+        buf = BytesIO()
+        img.save(buf, format="PNG")
+        byte_im = buf.getvalue()
+        
+        # 画面に表示
+        st.image(byte_im, caption="生成されたQRコード", width=300)
+        
+        # ダウンロードボタン
+        st.download_button(
+            label="画像をダウンロード",
+            data=byte_im,
+            file_name="qrcode.png",
+            mime="image/png"
+        )
+    else:
+        st.warning("URLを入力してください。")
