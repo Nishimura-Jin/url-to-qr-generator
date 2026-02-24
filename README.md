@@ -36,6 +36,7 @@ url-to-qr-generator/
 └── src/               # アプリケーション本体
     ├── app.py         # メインロジック
     └── fonts/         # 日本語フォントファイル (NotoSansJP-Medium.ttf)
+```
 
 ## 📝 使い方
 1. 生成したいURLを入力欄に貼り付けます。
