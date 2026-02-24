@@ -205,3 +205,18 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Pythonの一時ファイル（これらは自動生成されるので不要）
+__pycache__/
+*.pyc
+
+# Streamlitのローカル設定（個人の環境依存なので不要）
+.streamlit/
+
+# 仮想環境（フォルダごと上げると容量が巨大になるので不要）
+venv/
+.venv/
+env/
+
+# Mac特有の隠しファイル
+.DS_Store
