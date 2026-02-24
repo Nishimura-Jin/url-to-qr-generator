@@ -10,7 +10,7 @@ Python + Streamlit でサクッと作りました。
 - 軽量・シンプル設計（依存関係も最小限）
 
 ## デモ
-https://qr-generator-jin.streamlit.app/
+[https://qr-generator-jin.streamlit.app/](https://url-to-qr-generator-jin.streamlit.app/)
 
 ## ローカルでの実行方法
 
