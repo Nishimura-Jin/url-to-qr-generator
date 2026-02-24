@@ -2,7 +2,7 @@
 
 URLを入力するだけで、QRコードとその上下に「日本語の注釈」を付与した画像を生成・ダウンロードできるWebアプリです。
 
-## 🚀 App URL
+## 🚀 公開中のアプリ
 [https://url-to-qr-generator-jin.streamlit.app/](https://url-to-qr-generator-jin.streamlit.app/)
 
 ## 💡 開発の背景と想い
@@ -30,6 +30,7 @@ URLを入力するだけで、QRコードとその上下に「日本語の注釈
 ## 📂 フォルダ構成
 ```text
 url-to-qr-generator/
+├── .devcontainer/    # VS Code用の開発環境設定
 ├── .gitignore         # 不要なファイルの除外設定
 ├── requirements.txt   # 依存ライブラリ一覧
 ├── README.md          # 本ドキュメント
