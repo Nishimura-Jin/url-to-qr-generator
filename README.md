@@ -1,28 +1,44 @@
-# QRコード自動生成アプリ (Streamlit)
+# 注釈付きQRコード生成ツール (URL to QR Generator)
 
-シンプルなURL入力でQRコードを即座に生成・表示できるWebアプリです。  
-Python + Streamlit でサクッと作りました。
+URLを入力するだけで、QRコードとその上下に「日本語の注釈」を付与した画像を生成・ダウンロードできるWebアプリです。
 
+## 🚀 App URL
+[https://url-to-qr-generator-jin.streamlit.app/](https://url-to-qr-generator-jin.streamlit.app/)
 
-## 機能
-- 任意のURLを入力するだけでQRコードを生成
-- 生成したQRコードをブラウザ上で即座に確認
-- 軽量・シンプル設計（依存関係も最小限）
+## 💡 開発の背景と想い
+食品のラベルや書籍など、日常生活のあらゆる場面で信頼され活用されている「QRコード」という技術に深い関心を持ち、**「この社会に不可欠な仕組みを、自分の力（独学）でゼロから構築してみたい」**という探究心から開発をスタートしました。
 
-## デモ
-[https://qr-generator-jin.streamlit.app/](https://url-to-qr-generator-jin.streamlit.app/)
+単にプログラム上でQRコードを生成して完結させるのではなく、開発の過程で**「Web上の表示で終わらせず、名刺や掲示物として実際に印刷して活用することで、より現実社会での利便性が高まる」**という可能性に気づき、プロダクトとしての実用性を追求しました。
 
-## ローカルでの実行方法
+### ✨ アプリの質を向上させるための「注釈機能」
+既存のQRコード生成ツールの多くは、コードのみを出力するものが大半です。しかし、私は以下の理由から「注釈（テキスト）の付与」がアプリの質を決定づけると考え、実装にこだわりました。
 
-1. リポジトリをクローン
-   git clone https://github.com/Nishimura-Jin/url-to-qr-generator.git
-   cd url-to-qr-generator
+- **情報の即時性**: ユーザーがスマホをかざす前に、注釈によって「何のためのコードか」を簡易的に理解できるホスピタリティを提供します。
+- **物理的な実用性**: 印刷して運用する際、複数のコードを並べても内容を混同せず、貼り間違いなどのミスを防ぐことができます。
+- **技術的課題の解決**: Linuxサーバー上での日本語フォント描画（Pillowライブラリの活用）など、独学の中で直面した課題を一つひとつ自力で解決し、実用レベルの成果物として形にしました。
 
-3. 仮想環境を作成（推奨）python -m venv venv
-source venv/bin/activate    # Windowsの場合は venv\Scripts\activate
-4. 依存関係をインストール
-   pip install -r requirements.txt
-5. アプリを起動
-  streamlit run app.py
-6. ブラウザが自動で開くので、URLを入力して「QRコード作成」を押してください！
-7. ターミナルでCtrl + Cを押して終了
+「自分が作ったものを、名刺や資料に載せて即座に人に手渡せる」。そんな**「物理的な手触り感のある技術証明」**が、本アプリの最大の特徴です。
+
+## 🛠 使用技術
+- **Language**: Python 3.x
+- **Framework**: Streamlit
+- **Libraries**: 
+  - `qrcode` (QRコード生成)
+  - `Pillow` (画像処理・日本語描画)
+- **Infrastructure**: Streamlit Cloud
+
+## 📂 フォルダ構成
+```text
+url-to-qr-generator/
+├── .gitignore         # 不要なファイルの除外設定
+├── requirements.txt   # 依存ライブラリ一覧
+├── README.md          # 本ドキュメント
+└── src/               # アプリケーション本体
+    ├── app.py         # メインロジック
+    └── fonts/         # 日本語フォントファイル (NotoSansJP-Medium.ttf)
+## 📝 使い方
+生成したいURLを入力欄に貼り付けます。
+
+QRコードの上下に表示したいテキスト（注釈）を入力します。
+
+「QRコードを生成」ボタンを押し、プレビューを確認して画像をダウンロードしてください。
