@@ -86,6 +86,9 @@ def main():
                 # 画面表示
                 #修正前　st.image(qr_bytes, caption="生成結果", use_container_width=True)
                 st.image(qr_bytes, caption="生成結果（プレビュー）", width=300)
+
+                # 生成ボタンが押された後の処理の中にこれを追加
+                st.link_button("生成したリンクをブラウザで開いて確認する", url)
                 
                 # ダウンロードボタン
                 st.download_button(
@@ -99,4 +102,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
