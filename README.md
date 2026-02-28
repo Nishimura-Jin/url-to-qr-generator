@@ -3,7 +3,7 @@
 URLを入力するだけで、QRコードとその上下に「日本語の注釈」を付与した画像を生成・ダウンロードできるWebアプリです。
 
 ## 🚀 公開中のアプリ
-[https://url-to-qr-generator-jin.streamlit.app/](https://url-to-qr-generator-jin.streamlit.app/)
+https://url-to-qr-generator-jin.streamlit.app/
 
 ## 💡 開発の背景と想い
 食品のラベルや書籍など、日常生活のあらゆる場面で信頼され活用されている「QRコード」という技術に深い関心を持ち、 **「この社会に不可欠な仕組みを、自分の力（独学）でゼロから構築してみたい」** という探究心から開発をスタートしました。
