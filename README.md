@@ -21,13 +21,17 @@ https://url-to-qr-generator-jin.streamlit.app/
 - **生成後に確認できるリンクボタン**
     - わざわざスマホで読み取らなくても、ボタン一つでリンク先をブラウザで確認できるようにしました。
     - 印刷後にURLの間違いに気づく、というミスを防ぐための機能です。
-    
+
+- **生成履歴のDB保存**
+    - SQLiteを使用し、生成したURLと注釈をローカルDBに保存。
+    - サイドバーに履歴一覧を表示し、クリックすると入力欄に自動でセットされる。
 ## 使用技術
 - **Language:** Python 3.x
 - **Framework:** Streamlit
 - **Libraries:** 
   - `qrcode` (QRコード生成)
   - `Pillow` (画像処理・日本語描画)
+  - `sqlite3`（履歴の保存・取得）
 - **Infrastructure:** Streamlit Cloud
 
 ## フォルダ構成
