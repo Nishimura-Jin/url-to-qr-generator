@@ -46,6 +46,14 @@ def get_history():
     return rows
 
 
+def delete_history(history_id):
+    # 指定したIDの履歴をDBから削除する
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute("DELETE FROM history WHERE id = ?", (history_id,))
+    conn.commit()
+    conn.close()
+
+
 def generate_qr_code(url, label_text=None, label_position="Top"):
     qr = qrcode.QRCode(
         version=1,
@@ -121,12 +129,18 @@ def main():
             for row in history:
                 _, h_url, h_label, h_position, h_created_at = row
                 label = h_label if h_label else "注釈なし"
-                if st.button(f"{h_url[:30]}　{label}", key=f"history_{row[0]}"):
-                    st.session_state["url"] = h_url
-                    st.session_state["label_text"] = h_label or ""
-                    st.session_state["label_position"] = h_position
-                    st.session_state["qr_bytes"] = None
-                    st.rerun()
+                col1, col2 = st.columns([4, 1])
+                with col1:
+                    if st.button(f"{h_url[:30]}　{label}", key=f"history_{row[0]}"):
+                        st.session_state["url"] = h_url
+                        st.session_state["label_text"] = h_label or ""
+                        st.session_state["label_position"] = h_position
+                        st.session_state["qr_bytes"] = None
+                        st.rerun()
+                with col2:
+                    if st.button("🗑", key=f"delete_{row[0]}"):
+                        delete_history(row[0])
+                        st.rerun()
         else:
             st.write("まだ履歴がありません")
 
