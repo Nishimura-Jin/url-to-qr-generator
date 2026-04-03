@@ -5,6 +5,21 @@ URLを入力するだけで、QRコードとその上下に「日本語の注釈
 ## 公開中のアプリ
 https://huggingface.co/spaces/Nishimura24/url-to-qr-generator
 
+## フルスタック版（改良版）
+
+本アプリをもとに、フロントエンドとバックエンドを分離した構成でフルスタック版を開発しました。
+
+- デモ: https://qr-generator-fullstack.vercel.app/
+- リポジトリ: https://github.com/Nishimura-Jin/qr-generator-fullstack
+
+主な改善点:
+
+- React + FastAPI によるフロント・バックエンド分離
+- APIベースの設計に変更（他アプリから利用可能）
+- Dockerによる開発環境の統一
+- 状態管理の見直しによる不整合の解消
+- エラー処理・UXの改善
+
 ## 開発の背景
 食品のラベルや書籍など、日常生活のあらゆる場面で信頼され活用されている「QRコード」という技術に深い関心を持ち、 **「この社会に不可欠な仕組みを、自分の力（独学）でゼロから構築してみたい」** という探究心から開発をスタートしました。
 
